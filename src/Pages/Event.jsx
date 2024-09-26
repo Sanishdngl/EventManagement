@@ -1,11 +1,12 @@
 const Event = () => {
   return (
     <>
-      <div className="flex justify-center items-center text-6xl text-white font-extrabold font-sans bg-blue-800 mt-28">
-        Events
+      <div className="w-full z-10 bg-blue-800 flex justify-center items-center text-4xl
+       text-white font-extrabold py-4 shadow-md mt-20">
+      Events
       </div>
       <br/>
-      <br/>
+     
 
       <div className="flex justify-evenly">
         <div className="card bg-base-100 w-96 shadow-xl object-cover transition-transform transform hover:scale-110 hover:shadow-lg">

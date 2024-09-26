@@ -1,135 +1,130 @@
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css"; // Import core Swiper CSS
+import "swiper/css/navigation"; // Import Navigation module CSS
+import "swiper/css/pagination"; // Import Pagination module CSS
+import "swiper/css/autoplay"; // Import Autoplay module CSS
+
+// Import Swiper modules
+import { Navigation, Pagination, Autoplay } from "swiper/modules"; // Import necessary modules
+
 const Home = () => {
   return (
     <>
       <div
-        className=" flex justify-center items-center text-6xl
-                   text-white font-extrabold font-sans bg-blue-800 bg mt-28"
+        className="w-full z-10 bg-blue-800 flex justify-center items-center text-4xl text-white font-extrabold py-4 shadow-md mt-20"
       >
-        Events
+        Find and Host Events with eventA
       </div>
+      
+      {/* Swiper Section */}
+      <div className="w-full mt-6">
+        <Swiper
+          spaceBetween={50}
+          slidesPerView={1}
+          navigation={true} // Enable navigation
+          pagination={{ clickable: true }} // Enable pagination
+          autoplay={{ delay: 3000, disableOnInteraction: false }} // Enable autoplay with 3s delay
+          modules={[Navigation, Pagination, Autoplay]} // Add Autoplay to modules
+          className="swiper-container"
+        >
+          <SwiperSlide>
+            <img src="https://placehold.co/1200x400" alt="Slide 1" className="w-full h-auto" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="https://placehold.co/1200x400" alt="Slide 2" className="w-full h-auto" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="https://placehold.co/1200x400" alt="Slide 3" className="w-full h-auto" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="https://placehold.co/1200x400" alt="Slide 4" className="w-full h-auto" />
+          </SwiperSlide>
+        </Swiper>
+      </div>
+
       <br />
-      <div className=" flex justify-between items-center">
-        <div className=" font-extrabold text-4xl ml-10 flex flex-1 justify-center ">
-          <div className=" flex justify-start text-black">
-            Find and Host Events with eventA
+
+      {/* Event Cards Section */}
+      <div className="flex justify-evenly">
+        <div
+          className="card bg-base-100 w-96 shadow-xl object-cover transition-transform transform hover:scale-110 hover:shadow-lg"
+        >
+          <div className="card-body">
+            <h2 className="card-title">Wedding</h2>
+            <p>Book your wedding venues</p>
           </div>
-        </div>
-      </div>
-      <div className="flex justify-around items-center ">
-        <div className="object-cover transition-transform transform hover:scale-110 hover:shadow-lg">
-          <img
-            src="https://placehold.co/600x400"
-            alt="photo"
-            height={300}
-            width={300}
-          />
+          <figure>
+            <img src="https://placehold.co/600x400" alt="Wedding" />
+          </figure>
         </div>
 
-        <div className="rounded shadow-md h-50 w-72">
-          <p>
-            The upcoming Global Tech Summit, set to take place in San Francisco
-            this October, promises to be a landmark event in the world of
-            technology and innovation. Bringing together industry leaders,
-            entrepreneurs, and tech enthusiasts from around the globe, the
-            summit will feature keynote speeches, panel discussions, and
-            hands-on workshops.
-          </p>
-        </div>
-      </div>
-      <br />
-
-      <div className="flex justify-around items-center ">
-        <div className="rounded shadow-md h-50 w-72">
-          <p>
-            The upcoming Global Tech Summit, set to take place in San Francisco
-            this October, promises to be a landmark event in the world of
-            technology and innovation. Bringing together industry leaders,
-            entrepreneurs, and tech enthusiasts from around the globe, the
-            summit will feature keynote speeches, panel discussions, and
-            hands-on workshops.
-          </p>
-        </div>
-
-        <div className="object-cover transition-transform transform hover:scale-110 hover:shadow-lg">
-          <img
-            src="https://placehold.co/600x400"
-            alt="photo"
-            height={300}
-            width={300}
-          />
-        </div>
-      </div>
-      <br />
-
-      <div className="flex justify-around items-center ">
-        <div className="object-cover transition-transform transform hover:scale-110 hover:shadow-lg">
-          <img
-            src="https://placehold.co/600x400"
-            alt="photo"
-            height={300}
-            width={300}
-          />
-        </div>
-
-        <div className="rounded shadow-md h-50 w-72">
-          <p>
-            The upcoming Global Tech Summit, set to take place in San Francisco
-            this October, promises to be a landmark event in the world of
-            technology and innovation. Bringing together industry leaders,
-            entrepreneurs, and tech enthusiasts from around the globe, the
-            summit will feature keynote speeches, panel discussions, and
-            hands-on workshops.
-          </p>
-        </div>
-      </div>
-      <br />
-
-      <div className="flex justify-around items-center ">
-        <div className=" rounded shadow-md h-50 w-72">
-          <p>
-            The upcoming Global Tech Summit, set to take place in San Francisco
-            this October, promises to be a landmark event in the world of
-            technology and innovation. Bringing together industry leaders,
-            entrepreneurs, and tech enthusiasts from around the globe, the
-            summit will feature keynote speeches, panel discussions, and
-            hands-on workshops.
-          </p>
-        </div>
-
-        <div className="object-cover transition-transform transform hover:scale-110 hover:shadow-lg">
-          <img
-            src="https://placehold.co/600x400"
-            alt="photo"
-            height={300}
-            width={300}
-          />
-        </div>
-      </div>
-      <br />
-
-      <hr />
-
-      <div
-        className="hero min-h-screen"
-        style={{
-          backgroundImage:
-            "url(https://miamioh.edu/fsb/_files/images/isa/generic-images/isa-generic-11.jpg)",
-        }}
-      >
-        <div className="hero-overlay bg-opacity-60"></div>
-        <div className="hero-content text-neutral-content text-center">
-          <div className="max-w-md">
-            <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-            <p className="mb-5">
-              Career Consult is providing you a great oppourtinity to discover
-              your creativity and boost excellence.
-            </p>
-            <a href="./Contact">
-              <button className="btn btn-primary">Get Started</button>
-            </a>
+        <div
+          className="card bg-base-100 w-96 shadow-xl object-cover transition-transform transform hover:scale-110 hover:shadow-lg"
+        >
+          <div className="card-body">
+            <h2 className="card-title">Live Concert</h2>
+            <p>Book your tickets</p>
           </div>
+          <figure>
+            <img src="https://placehold.co/600x400" alt="Concert" />
+          </figure>
+        </div>
+
+        <div
+          className="card bg-base-100 w-96 shadow-xl object-cover transition-transform transform hover:scale-110 hover:shadow-lg"
+        >
+          <div className="card-body">
+            <h2 className="card-title">Political Event</h2>
+            <p>Participate in your favorite political event</p>
+          </div>
+          <figure>
+            <img src="https://placehold.co/600x400" alt="Political Event" />
+          </figure>
         </div>
       </div>
+
+      <br />
+      <br />
+
+      <div className="flex justify-evenly">
+        <div
+          className="card bg-base-100 w-96 shadow-xl object-cover transition-transform transform hover:scale-110 hover:shadow-lg"
+        >
+          <div className="card-body">
+            <h2 className="card-title">Educational Event</h2>
+            <p>Participate in your favorite education session</p>
+          </div>
+          <figure>
+            <img src="https://placehold.co/600x400" alt="Educational Event" />
+          </figure>
+        </div>
+
+        <div
+          className="card bg-base-100 w-96 shadow-xl object-cover transition-transform transform hover:scale-110 hover:shadow-lg"
+        >
+          <div className="card-body">
+            <h2 className="card-title">Sports</h2>
+            <p>Register your team or buy tickets.</p>
+          </div>
+          <figure>
+            <img src="https://placehold.co/600x400" alt="Sports" />
+          </figure>
+        </div>
+
+        <div
+          className="card bg-base-100 w-96 shadow-xl object-cover transition-transform transform hover:scale-110 hover:shadow-lg"
+        >
+          <div className="card-body">
+            <h2 className="card-title">Food Festival</h2>
+            <p>Book your tickets for the festival.</p>
+          </div>
+          <figure>
+            <img src="https://placehold.co/600x400" alt="Food Festival" />
+          </figure>
+        </div>
+      </div>
+      <br />
+      <br />
     </>
   );
 };
