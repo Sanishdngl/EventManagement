@@ -28,7 +28,7 @@ const Home = () => {
           className="swiper-container"
         >
           <SwiperSlide>
-            <img src="https://placehold.co/1200x400" alt="Slide 1" className="w-full h-auto" />
+            <img src="src\assets\Wedding1.jpg" alt="Slide 1" className="w-full h-auto" />
           </SwiperSlide>
           <SwiperSlide>
             <img src="https://placehold.co/1200x400" alt="Slide 2" className="w-full h-auto" />
