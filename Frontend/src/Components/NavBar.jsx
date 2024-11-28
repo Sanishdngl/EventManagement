@@ -1,10 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import eventA from "../assets/images/eventA.png"; 
 import SearchIcon from "../assets/icon/SearchIcon.png"; 
 
 const NavBar = () => {
   const [sticky, setSticky] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -61,8 +62,13 @@ const NavBar = () => {
       </li>
     </>
   );
-  
-  
+
+  if (
+    location.pathname.startsWith("/admindb") || 
+    location.pathname.startsWith("/orgdb")
+  ) {
+    return null;
+  }
 
   return (
     <>

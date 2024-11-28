@@ -1,6 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Footer = () => {
+  const location = useLocation();
+
+  // Exclude the footer on specific dashboard pages
+  if (
+    location.pathname.startsWith("/admindb") ||
+    location.pathname.startsWith("/orgdb")
+  ) {
+    return null; // Do not render the footer
+  }
+
   return (
     <div>
       <footer className="bg-gray-800 text-white py-6">
